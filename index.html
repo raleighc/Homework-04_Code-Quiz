@@ -2,18 +2,58 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <h1>Hello Twitter World.</h1>
-        
-        <script type="text/javascript" src="./script.js"></script>
-    </body>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Timed Coding Quiz</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- <h1>Hello Twitter World.</h1> -->
+
+    <!--nav bar with link to high scores on left and countdown timer on right-->
+    <nav class="navbar navbar-header navbar-dark bg-dark">
+      <a class="nav-link" href="#">View High Scores</a>
+      <div class="navbar-right" id="navbarText">
+        <span class="navbar-text"> Time Remaining: 75 </span>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 id="title">Coding Quiz Challenge</h1>
+          <h2 id="questions"></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <h3 id="instruction">
+            Try to answer the following code-related questions within the time
+            limit. Keep in mind that incorrect answers will penalize your
+            score/time by ten seconds.
+          </h3>
+          <button id="begin" class="btn btn-primary" type="submit">Start Quiz</button>
+
+          <button id="questionOne" class="btn btn-primary" type="submit">Questiion 1</button>
+          <button id="questionTwo" class="btn btn-primary" type="submit">Questiion 2</button>
+          <button id="questionThree" class="btn btn-primary" type="submit">Questiion 3</button>
+          <button id="QuestionFour" class="btn btn-primary" type="submit">Questiion 4</button>
+        </div>
+      </div>
+    </main>
+
+    <script type="text/javascript" src="./script.js"></script>
+  </body>
 </html>
