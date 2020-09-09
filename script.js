@@ -6,7 +6,15 @@ var timerCountdown = document.getElementById("timer");
 var startButton = document.getElementById("begin");
 var titleEl = document.getElementById("title");
 var startButton = document.getElementById("start");
-var questionEl = document.getElementById("questionsDiv");
+var questionDiv = document.getElementById("questionsDiv");
+
+var beginPageDiv = document.getElementById("beginning");
+
+var questionEl = document.getElementById("currentQuestion")
+var selectionButtonOne = document.getElementById("questionOne");
+var selectionButtonTwo = document.getElementById("questionTwo");
+var selectionButtonThree = document.getElementById("questionThree");
+var selectionButtonFour = document.getElementById("questionFour");
 
 var questionArray = [
   {
@@ -55,13 +63,24 @@ var wrongTimer = totalTimer - 15;
 function beginTimer(){
     var timerInt = setInterval(function() {
         totalTimer--;
-        timerCountdown.textContent = "Time remaining:" + totalTimer;
-        
-
+        timerCountdown.textContent = "Time remaining: " + totalTimer;
     }, 1000);
 }
 
 startButton.addEventListener("click", function(){
     beginTimer();
+    beginPageDiv.setAttribute("class", "hide");
+    firstQuestion();
+    questionDiv.removeAttribute("class", "hide");
 
 })
+
+//beginning first questions function
+function firstQuestion(){
+    questionEl.textContent = questionArray[0].question1;
+    console.log(firstQuestion);
+    selectionButtonOne.textContent = questionArray[0].wrong1;
+    selectionButtonTwo.textContent = questionArray[0].wrong2;
+    selectionButtonThree.textContent = questionArray[0].correct3;
+    selectionButtonFour.textContent = questionArray[0].wrong4;
+}
