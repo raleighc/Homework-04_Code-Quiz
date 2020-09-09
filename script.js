@@ -19,42 +19,42 @@ var resultEl = document.getElementById("result");
 
 var questionArray = [
   {
-    question1: "Commonly used data types DO NOT include: ",
+    question: "Commonly used data types DO NOT include: ",
     wrong1: "1. strings",
     wrong2: "2. booleans",
-    correct3: "3. alerts",
-    wrong4: "4. numbers",
+    correct: "3. alerts",
+    wrong3: "4. numbers",
   },
   {
-    question2:
+    question:
       "The condition in an if/else statement is enclosed within __________.",
     wrong1: "1. quotes",
     wrong2: "2. curly brackets",
-    correct3: "3. parentheses",
-    wrong4: "4. square brackets",
+    correct: "3. parentheses",
+    wrong3: "4. square brackets",
   },
   {
-    question3: "Arrays in JavaScript can be used to store __________.",
+    question: "Arrays in JavaScript can be used to store __________.",
     wrong1: "1. numbers and strings",
     wrong2: "2. other arrays",
     wrong3: "3. booleans",
-    correct4: "4. all of the above",
+    correct: "4. all of the above",
   },
   {
-    question4:
+    question:
       "String values must be enclosed within __________ when being assigned to variables.",
     wrong1: "1. commas",
-    correct2: "2. parentheses",
-    wrong3: "3. quotes",
-    wrong4: "4. curly brackets",
+    correct: "2. parentheses",
+    wrong2: "3. quotes",
+    wrong3: "4. curly brackets",
   },
   {
-    question5:
+    question:
       "A very useful tool used during development and debugging for printing content to the debugger is: ",
-    correct1: "1. console.log",
-    wrong2: "2. terminal/bash",
-    wrong3: "3. for loops",
-    wrong4: "4. JavaScript",
+    correct: "1. console.log",
+    wrong1: "2. terminal/bash",
+    wrong2: "3. for loops",
+    wrong3: "4. JavaScript",
   },
 ];
 
@@ -112,17 +112,46 @@ startButton.addEventListener("click", function(){
 
 //beginning first questions function
 function firstQuestion(){
-    questionEl.textContent = questionArray[0].question1;
+    questionEl.textContent = questionArray[0].question;
  
     selectionButtonOne.textContent = questionArray[0].wrong1;
     selectionButtonTwo.textContent = questionArray[0].wrong2;
-    selectionButtonThree.textContent = questionArray[0].correct3;
-    selectionButtonFour.textContent = questionArray[0].wrong4;
+    selectionButtonThree.textContent = questionArray[0].correct;
+    selectionButtonFour.textContent = questionArray[0].wrong3;
     
 
     selectionButtonOne.addEventListener("click", function(){
-        console.log("button clicked");
-        if (selectionButtonOne.textContent === questionArray[0].correct3){
+        if (selectionButtonOne.textContent === questionArray[0].correct){
+            secondQuestion();
+            resultTimerCorrect();
+        } else {
+            secondQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
+    selectionButtonTwo.addEventListener("click", function(){
+        if (selectionButtonTwo.textContent === questionArray[0].correct){
+            secondQuestion();
+            resultTimerCorrect();
+        } else {
+            secondQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
+    selectionButtonThree.addEventListener("click", function(){
+        if (selectionButtonThree.textContent === questionArray[0].correct){
+            secondQuestion();
+            resultTimerCorrect();
+        } else {
+            secondQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
+    selectionButtonFour.addEventListener("click", function(){
+        if (selectionButtonFour.textContent === questionArray[0].correct){
             secondQuestion();
             resultTimerCorrect();
         } else {
@@ -132,13 +161,208 @@ function firstQuestion(){
         }
     })
 }
+
+//SECOND QUESTION
 function secondQuestion(){
-    questionEl.textContent = questionArray[1].question2;
+    questionEl.textContent = questionArray[1].question;
   
     selectionButtonOne.textContent = questionArray[1].wrong1;
     selectionButtonTwo.textContent = questionArray[1].wrong2;
-    selectionButtonThree.textContent = questionArray[1].correct3;
-    selectionButtonFour.textContent = questionArray[1].wrong4;
+    selectionButtonThree.textContent = questionArray[1].correct;
+    selectionButtonFour.textContent = questionArray[1].wrong3;
+
+    selectionButtonOne.addEventListener("click", function(){
+        if (selectionButtonOne.textContent === questionArray[1].correct){
+            thirdQuestion();
+            resultTimerCorrect();
+        } else {
+            thirdQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
+    selectionButtonTwo.addEventListener("click", function(){
+        if (selectionButtonTwo.textContent === questionArray[1].correct){
+            thirdQuestion();
+            resultTimerCorrect();
+        } else {
+            thirdQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
+    selectionButtonThree.addEventListener("click", function(){
+        if (selectionButtonThree.textContent === questionArray[1].correct){
+            thirdQuestion();
+            resultTimerCorrect();
+        } else {
+            thirdQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
+    selectionButtonFour.addEventListener("click", function(){
+        if (selectionButtonFour.textContent === questionArray[1].correct){
+            thirdQuestion();
+            resultTimerCorrect();
+        } else {
+            thirdQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
 }
 
+//THIRD QUESTION
+function thirdQuestion(){
+    questionEl.textContent = questionArray[2].question;
+  
+    selectionButtonOne.textContent = questionArray[2].wrong1;
+    selectionButtonTwo.textContent = questionArray[2].wrong2;
+    selectionButtonThree.textContent = questionArray[2].wrong3;
+    selectionButtonFour.textContent = questionArray[2].correct;
+
+    selectionButtonOne.addEventListener("click", function(){
+        if (selectionButtonOne.textContent === questionArray[2].correct){
+            fourthQuestion();
+            resultTimerCorrect();
+        } else {
+            fourthQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
+    selectionButtonTwo.addEventListener("click", function(){
+        if (selectionButtonTwo.textContent === questionArray[2].correct){
+            fourthQuestion();
+            resultTimerCorrect();
+        } else {
+            fourthQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
+    selectionButtonThree.addEventListener("click", function(){
+        if (selectionButtonThree.textContent === questionArray[2].correct){
+            fourthQuestion();
+            resultTimerCorrect();
+        } else {
+            fourthQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
+    selectionButtonFour.addEventListener("click", function(){
+        if (selectionButtonFour.textContent === questionArray[2].correct){
+            fourthQuestion();
+            resultTimerCorrect();
+        } else {
+            fourthQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
+}
+
+//FOURTH QUESTION
+function fourthQuestion(){
+    questionEl.textContent = questionArray[3].question;
+  
+    selectionButtonOne.textContent = questionArray[3].wrong1;
+    selectionButtonTwo.textContent = questionArray[3].correct;
+    selectionButtonThree.textContent = questionArray[3].wrong2;
+    selectionButtonFour.textContent = questionArray[3].wrong3;
+
+    selectionButtonOne.addEventListener("click", function(){
+        if (selectionButtonOne.textContent === questionArray[3].correct){
+            fifthQuestion();
+            resultTimerCorrect();
+        } else {
+            fifthQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
+    selectionButtonTwo.addEventListener("click", function(){
+        if (selectionButtonTwo.textContent === questionArray[3].correct){
+            fifthQuestion();
+            resultTimerCorrect();
+        } else {
+            fifthQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
+    selectionButtonThree.addEventListener("click", function(){
+        if (selectionButtonThree.textContent === questionArray[3].correct){
+            fifthQuestion();
+            resultTimerCorrect();
+        } else {
+            fifthQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
+    selectionButtonFour.addEventListener("click", function(){
+        if (selectionButtonFour.textContent === questionArray[3].correct){
+            fifthQuestion();
+            resultTimerCorrect();
+        } else {
+            fifthQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
+}
+
+//FIFTH QUESTION
+function fifthQuestion(){
+    questionEl.textContent = questionArray[4].question;
+  
+    selectionButtonOne.textContent = questionArray[4].correct;
+    selectionButtonTwo.textContent = questionArray[4].wrong1;
+    selectionButtonThree.textContent = questionArray[4].wrong2;
+    selectionButtonFour.textContent = questionArray[4].wrong3;
+
+    selectionButtonOne.addEventListener("click", function(){
+        if (selectionButtonOne.textContent === questionArray[4].correct){
+            fifthQuestion();
+            resultTimerCorrect();
+        } else {
+            fifthQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
+    selectionButtonTwo.addEventListener("click", function(){
+        if (selectionButtonTwo.textContent === questionArray[4].correct){
+            fifthQuestion();
+            resultTimerCorrect();
+        } else {
+            fifthQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
+    selectionButtonThree.addEventListener("click", function(){
+        if (selectionButtonThree.textContent === questionArray[4].correct){
+            fifthQuestion();
+            resultTimerCorrect();
+        } else {
+            fifthQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
+    selectionButtonFour.addEventListener("click", function(){
+        if (selectionButtonFour.textContent === questionArray[4].correct){
+            fifthQuestion();
+            resultTimerCorrect();
+        } else {
+            fifthQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
+}
 
