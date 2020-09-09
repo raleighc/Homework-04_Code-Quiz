@@ -30,3 +30,9 @@ li{
 .hide{
     display: none;
 }
+#result{
+    padding: 5px;
+    font-size: 18px;
+    border-top: 2px solid lightgray;
+    color: lightgray;
+}

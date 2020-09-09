@@ -15,6 +15,7 @@ var selectionButtonOne = document.getElementById("questionOne");
 var selectionButtonTwo = document.getElementById("questionTwo");
 var selectionButtonThree = document.getElementById("questionThree");
 var selectionButtonFour = document.getElementById("questionFour");
+var resultEl = document.getElementById("result");
 
 var questionArray = [
   {
@@ -58,7 +59,8 @@ var questionArray = [
 ];
 
 var totalTimer = 75;
-var wrongTimer = totalTimer - 15;
+
+
 
 function beginTimer(){
     var timerInt = setInterval(function() {
@@ -66,6 +68,39 @@ function beginTimer(){
         timerCountdown.textContent = "Time remaining: " + totalTimer;
     }, 1000);
 }
+
+function wrongAnswer(){
+    var wrongTimer = totalTimer - 15;
+    totalTimer = wrongTimer;
+}
+
+
+var resultTimer = 3;
+
+function resultTimerCorrect(){
+    var resultInt = setInterval(function() {
+        resultTimer--;
+        resultEl.removeAttribute("class", "hide");
+        resultEl.textContent = "CORRECT!";
+        if (resultTimer === 0){
+            resultEl.setAttribute("class", "hide");
+            clearInterval(resultInt);
+        }
+    }, 1000);
+}
+
+function resultTimerWrong(){
+    var resultInt = setInterval(function() {
+        resultTimer--;
+        resultEl.removeAttribute("class", "hide");
+        resultEl.textContent = "WRONG!";
+        if (resultTimer === 0){
+            resultEl.setAttribute("class", "hide");
+            clearInterval(resultInt);
+        }
+    }, 1000);
+}
+
 
 startButton.addEventListener("click", function(){
     beginTimer();
@@ -78,9 +113,32 @@ startButton.addEventListener("click", function(){
 //beginning first questions function
 function firstQuestion(){
     questionEl.textContent = questionArray[0].question1;
-    console.log(firstQuestion);
+ 
     selectionButtonOne.textContent = questionArray[0].wrong1;
     selectionButtonTwo.textContent = questionArray[0].wrong2;
     selectionButtonThree.textContent = questionArray[0].correct3;
     selectionButtonFour.textContent = questionArray[0].wrong4;
+    
+
+    selectionButtonOne.addEventListener("click", function(){
+        console.log("button clicked");
+        if (selectionButtonOne.textContent === questionArray[0].correct3){
+            secondQuestion();
+            resultTimerCorrect();
+        } else {
+            secondQuestion();
+            resultTimerWrong();
+            wrongAnswer();
+        }
+    })
 }
+function secondQuestion(){
+    questionEl.textContent = questionArray[1].question2;
+  
+    selectionButtonOne.textContent = questionArray[1].wrong1;
+    selectionButtonTwo.textContent = questionArray[1].wrong2;
+    selectionButtonThree.textContent = questionArray[1].correct3;
+    selectionButtonFour.textContent = questionArray[1].wrong4;
+}
+
+
